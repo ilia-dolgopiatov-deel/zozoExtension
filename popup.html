@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="css/popup.css">
+</head>
+
+<body>
+    <div id="mainContent">
+        <div id="topBar">
+            Zozo v
+            <div id="appVersion"></div>
+            <img id="settings" src="images/settings.png">
+        </div>
+        <div id="emptyRules" class="hidden">
+            <div>You have not created any rules.</div>
+            <div>
+                <a role="addRule" href="#">
+                    Add a rule
+                </a>
+                <span> or </span>
+                <a href="#" data-pro-only>load rules from JSON</a>
+            </div>
+        </div>
+        <div id="rulesList" class="hidden">
+            <a role="addRule" href="#">
+                Add new rule
+            </a>
+        </div>
+        <form id="addRuleForm" class="hidden">
+            <h3>New rule</h3>
+            <input id="ruleQueryInput" name="key" autocomplete="off" placeholder="search query" required />
+            <input id="ruleURLInput" name="value" autocomplete="off" placeholder="url" required />
+            <button type="submit">Add</button>
+        </form>
+        <div id="settingsContainer" class="hidden">
+            <div class="settings-title">
+                --- Settings ---
+            </div>
+            <div class="settings-content">
+                <div class="settings-content__block">
+                    <div class="settings-content__item">
+                        <label for="strictMode" class="settings-content__item--name flex">
+                            Use strict matching
+                            <div class="hint" data-tooltip="In strict mode only full URL match counts, otherwise only checks host name">?</div>
+                        </label>
+                        <input class="toggle-checkbox" id="strictMode" type="checkbox">
+                        <label class="toggle-switch" for="strictMode"></label>
+                    </div>
+                </div>
+                <div class="settings-content__block">
+                    <div class="settings-content__block--name">
+                        Search Engines
+                    </div>
+                    <div class="settings-content__item">
+                        <label for="google" class="settings-content__item--name">
+                            Google
+                        </label>
+                        <input class="toggle-checkbox" id="google" type="checkbox" checked>
+                        <label class="toggle-switch" for="google"></label>
+                    </div>
+                    <div class="settings-content__item">
+                        <label for="duckduckgo" class="settings-content__item--name">
+                            DuckDuckGo
+                        </label>
+                        <input class="toggle-checkbox" id="duckduckgo" type="checkbox">
+                        <label class="toggle-switch" for="duckduckgo"></label>
+                    </div>
+                    <div class="settings-content__item">
+                        <label for="yandex" class="settings-content__item--name">
+                            Yandex
+                        </label>
+                        <input class="toggle-checkbox" id="yandex" type="checkbox" data-pro-only>
+                        <label class="toggle-switch" for="yandex"></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="scripts/utils.js"></script>
+    <script type="module" src="scripts/constants.js"></script>
+    <script type="module" src="scripts/storage.js"></script>
+    <script type="module" src="scripts/settings.js"></script>
+    <script type="module" src="scripts/popup.js"></script>
+</body>
+
+</html>

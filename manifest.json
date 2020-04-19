@@ -1,0 +1,24 @@
+{
+    "name": "Zozo",
+    "version": "0.1",
+    "description": "Zozo is the best way to check if you clicked something, that appeared in the first page of google search by specific search query",
+    "manifest_version": 2,
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "include_globs": ["*://www.google.*/search?*", "*://duckduckgo.*"],
+            "js": ["scripts/content.js"]
+        }
+    ],
+    "browser_action": {
+        "default_popup": "popup.html",
+        "default_icon": "images/zozo_icon.png"
+    },
+    "permissions": [
+        "storage",
+        "webNavigation"
+    ],
+    "web_accessible_resources": [
+        "scripts/*"
+    ]
+}
